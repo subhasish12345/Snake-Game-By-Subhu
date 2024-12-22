@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Yellowtail&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background: url(../items/bg.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+#board {
+    background: linear-gradient(rgb(145, 204, 145), yellow);
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    margin-right: 20px;
+}
+
+.head {
+    background-color: rgb(214, 30, 30);
+    border: 2px solid black;
+    transform: scale(1.2);
+    border-radius: 9px;
+}
+
+.snake {
+    background-color: rgb(8, 5, 8);
+    border-radius: 12px;
+}
+
+.food {
+    background: linear-gradient(red, purple);
+    border: 0.25vmin solid black;
+}
+
+.maker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 55vmin;
+    height: 92vmin;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.maker h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Yellowtail', cursive;
+    padding: 18px;
+    font-size: 32px;
+    background-color: rgba(72, 157, 236, 0.884);
+    border-radius: 22px;
+    box-shadow: inset 3px 5px green;
+    text-shadow: -3px -2px 2px rgb(185, 72, 72);
+    margin-bottom: 15px;
+}
+
+#scoreBox, #hiscoreBox, #extra {
+    font-family: 'Bebas Neue', cursive;
+    padding: 18px;
+    font-size: 32px;
+    background-color: rgba(36, 196, 196, 0.884);
+    border-radius: 22px;
+    box-shadow: inset 3px 5px green;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#scoreBox {
+    background-color: rgba(36, 196, 196, 0.884);
+}
+
+#hiscoreBox {
+    background-color: rgba(46, 172, 94, 0.884);
+}
+
+#extra {
+    background-color: rgba(214, 230, 77, 0.884);
+}
+
+
+
+.maker h3 {
+    font-size: 18px; /* Adjusted font size */
+    margin-bottom: 15px;
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #0e66ea;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.controls button:active {
+    background-color: #333;
+}
+
+.controls div {
+    display: flex;
+    gap: 10px;
+}
+
+#deviceNotice {
+    font-size: 18px;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+#deviceNotice p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Mobile version */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #board {
+        width: 80vmin;
+        height: 80vmin;
+    }
+
+    .maker {
+        width: 80vmin;
+        margin-top: 20px;
+    }
+
+    .maker h1 {
+        font-size: 28px; /* Adjusted font size for mobile */
+        padding: 12px;
+    }
+
+    #scoreBox, #hiscoreBox, #extra {
+        font-size: 24px; /* Adjusted font size for mobile */
+        padding: 10px;
+    }
+
+    .controls button {
+        width: 50px;
+        height: 50px;
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    #deviceNotice {
+        width: 100%;
+        margin-top: 15px;
+        font-size: 14px; /* Adjusted font size for mobile */
+    }
+
+    #deviceNotice p {
+        font-size: 12px;
+    }
+
+    .maker h3 {
+        font-size: 16px; /* Adjusted font size for mobile */
+    }
+}
